@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis medios</title>
+    <title>Mi perfil</title>
     <link rel="icon" href="../../Aplicacion-publica/imagenes/principales/logo-finance-focus.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +31,7 @@
                 src="../iconos/encabezado/1-logo-header.svg" 
                 alt="icono del titulo"
             >
-            <span class="header-aplicacion__titulo">Mis medios</span>
+            <span class="header-aplicacion__titulo">Mi perfil</span>
         </div>
         
         <a class="enlace-boton" href="../../index.html">
@@ -109,8 +109,8 @@
                     </a>
                 </li>
                 <li class="barra-lateral__elemento-navegacion">
-                    <a class="barra-lateral__enlace" href="#">
-                        <div class="barra-lateral__circulo-indicador  barra-lateral__circulo-indicador--activo">
+                    <a class="barra-lateral__enlace" href="medios.html">
+                        <div class="barra-lateral__circulo-indicador ">
                             <img 
                                 class="barra-lateral__icono" 
                                 src="../iconos/barra-navegacion/6-icono-barra-navegacion-mi-dinero.svg" 
@@ -149,8 +149,8 @@
         <nav class="barra-lateral__navegacion">
             <ul class="barra-lateral__elementos-navegacion">
                 <li class="barra-lateral__elemento-navegacion">
-                    <a class="barra-lateral__enlace" href="perfil.html">
-                        <div class="barra-lateral__circulo-indicador">
+                    <a class="barra-lateral__enlace" href="#">
+                        <div class="barra-lateral__circulo-indicador  barra-lateral__circulo-indicador--activo">
                             <img 
                                 class="barra-lateral__icono" 
                                 src="../iconos/barra-navegacion/9-icono-barra-navegacion-perfil.svg" 
@@ -164,125 +164,13 @@
         </nav>
     </div>
 
-    <main class="acciones-aplicacion">
-        <div class="contenedor">
-            <form action="" class="formulario-aplicacion formulario-aplicacion--medios-pago">
-                <legend class="formulario-aplicacion__titulo">Registrar medio</legend>
-    
-                <label for="nombre">Nombre</label>
-                <input 
-                    class="formulario-aplicacion__input" 
-                    name="nombre" 
-                    id="nombre" 
-                    type="text" 
-                    placeholder="Nombre del medio"
-                >
-    
-                <label for="cuanto">Disponible</label>
-                <input 
-                    class="formulario-aplicacion__input  formulario-aplicacion__input--cantidad" 
-                    name="cuanto" 
-                    id="cuanto" 
-                    type="number" 
-                    placeholder="0.0"
-                >
-    
-                <label for="tipo">¿Digital o fisico?</label>
-                <select class="formulario-aplicacion__input  formulario-aplicacion__input--select  --select2" name="tipo" id="tipo">
-                    <option value="" disabled selected  hiden>Elige el tipo</option>
-                    <option value="digital">Digital</option>
-                    <option value="fisico">Fisico</option>
-                </select>
-    
-                <label for="para">¿Para ahorrar o gastos?</label>
-                <select class="formulario-aplicacion__input  formulario-aplicacion__input--select  --select3" name="para" id="para">
-                    <option value="" disabled selected  hidden>Elige para qué será</option>
-                    <option value="Ahorro">Ahorro</option>
-                    <option value="gastos">Gastos comunes</option>
-                </select>
-    
-                <div class="formulario-aplicacion__botones">
-                    <button class="boton-normal" type="reset">
-                        Limpiar
-                    </button>
-                    <button class="boton-normal" type="submit">
-                        Añadir nuevo
-                    </button>
-                </div>
-    
-            </form>
-    
-            <div class="acciones-aplicacion__derecho">
-
-                <div class="historico historico--medios">
-                    <div class="historico-encabezado">
-                        <h4 class="historico-titulo">Mis medios de pago</h4>
-                        <select class="seleccion-mes --select4" name="selecion-mes" id="selecion-mes">
-                            <option value="todos" selected>Todos</option>
-                            <option value="digital">Digitales</option>
-                            <option value="fisico">Fisicos</option>
-                            <option value="ahorro">De ahorro</option>
-                            <option value="gastos">De gastos</option>
-                        </select>
-                    </div>
-
-                    <div class="historico-movimientos  historico-movimientos--medios">
-                        <div class="historico-individual">
-                            <div class="historico-individual__texto">Bancolombia</div>
-                            <div class="historico-individual__texto">$500.000</div>
-                            <div class="botones">
-                                <button class="boton-transparente boton-transparente--rechazar boton--pequeño">Eliminar</button>
-                                <button class="boton-transparente boton-transparente--neutro boton--pequeño">Editar</button>
-                            </div>
-                        </div>
-                        <div class="historico-individual">
-                            <div class="historico-individual__texto">Efectivo</div>
-                            <div class="historico-individual__texto">$228.000</div>
-                            <div class="botones">
-                                <button class="boton-transparente boton-transparente--rechazar boton--pequeño">Eliminar</button>
-                                <button class="boton-transparente boton-transparente--neutro boton--pequeño">Editar</button>
-                            </div>
-                        </div>
-                        <div class="historico-individual">
-                            <div class="historico-individual__texto">Lulo bank</div>
-                            <div class="historico-individual__texto">$0</div>
-                            <div class="botones">
-                                <button class="boton-transparente boton-transparente--rechazar boton--pequeño">Eliminar</button>
-                                <button class="boton-transparente boton-transparente--neutro boton--pequeño">Editar</button>
-                            </div>
-                        </div>
-                        <div class="historico-individual">
-                            <div class="historico-individual__texto">Davivienda</div>
-                            <div class="historico-individual__texto">$0</div>
-                            <div class="botones">
-                                <button class="boton-transparente boton-transparente--rechazar boton--pequeño">Eliminar</button>
-                                <button class="boton-transparente boton-transparente--neutro boton--pequeño">Editar</button>
-                            </div>
-                        </div>
-                        <div class="historico-individual">
-                            <div class="historico-individual__texto">lulo bank ahorro</div>
-                            <div class="historico-individual__texto">$2'740.000</div>
-                            <div class="botones">
-                                <button class="boton-transparente boton-transparente--rechazar boton--pequeño">Eliminar</button>
-                                <button class="boton-transparente boton-transparente--neutro boton--pequeño">Editar</button>
-                            </div>
-                        </div>
-                        <div class="historico-individual">
-                            <div class="historico-individual__texto">Bancolombia ahorro</div>
-                            <div class="historico-individual__texto">$1'000.000</div>
-                            <div class="botones">
-                                <button class="boton-transparente boton-transparente--rechazar boton--pequeño">Eliminar</button>
-                                <button class="boton-transparente boton-transparente--neutro boton--pequeño">Editar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+    <main class="acciones-aplicacion acciones-aplicacion--construccion">
+        <h1 class="En-construccion">
+            El sitio se encuentra en construcción <br>
+            ¡Estaremos disponibles muy pronto!
+        </h1>
     </main>
 
     <script src="../javascript/script-barra-navegacion.js"></script>
-    <script src="../javascript/script-acciones-aplicacion-medios.js"></script>
 </body>
 </html>
