@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+
+/* body 1  */
+.body1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #888888;
+    background-color: #01060c; 
+    margin-top: 100px;
+}
+
+.content1{ 
+    width: 40%;
+    margin-left: 10%; 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.title{
+    color: #888888;
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.subtitle{
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 800;
+}
+
+.descp{
+    font-size: 25px;
+    font-weight: 400;
+    color: #888888;
+    margin-top: 20px;
+}
+
+.content2{
+    margin-top: 90px;
+    overflow: hidden;
+    padding-bottom: 150px;
+    margin-right: auto;
+}
+
+.img {
+    width: 100%;
+}
+
+.img_inicio {
+    width: 100%;
+}
+
+
+
+ /* body2 */
+.body2{
+    background-color: #041023;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.title2{
+    color: #ffffff;
+    margin-top:100px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 46px;
+    width: 750px;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 40px;
+    padding-bottom: 150px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 300px;
+    margin: 75px;
+    padding-top: 40px;
+    border:4px black;
+    background-color: #1d2739;
+    text-align: center;
+    color: #ffffff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card-img{
+    margin-left: 30px;
+}
+
+.title-card{
+    font-size: 20px;
+    padding-top: 10px;
+    
+}
+
+
+
+@media screen and (max-width:1010px) {
+
+    .body1{
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .title2, .cards{
+      justify-content: center;
+      align-items: center;
+    }
+
+    .content1{
+      margin-top: 150px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .title{
+        font-size: 45px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .subtitle{
+        font-size: 45px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .descp{
+        font-size: 25px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .title2{
+        font-size: 35px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card{
+        margin: 30px auto;
+    }
+
+    .content2 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .img {
+        width: 320px;
+    }
+
+    .img_inicio {
+        width: 100%;
+    }
+
+
+}

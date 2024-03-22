@@ -1,0 +1,990 @@
+/* Estilos universales */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+:root {
+    
+    --Color-Primario-500: #072146;
+    --color-primario-700: #05162F;
+    --color-primario-900: #020B17;
+    --color-primario-1000: #01050C;
+
+    --color-tenue: #888888;
+
+    --color-boton-aceptar-hover: rgba(8, 216, 90, 0.50);
+    --color-boton-aceptar-activo: rgba(8, 216, 90, 0.70);
+    --color-boton-rechazar-hover: rgba(225, 26, 41, 0.50);
+    --color-boton-rechazar-activo: rgba(225, 26, 41, 0.70);
+    --color-boton-neutral-hover: #636363;
+    --color-boton-neutral-activo: #373737;
+
+}
+
+body {
+    height: 98vh;
+    width: 100%;
+    background-color: var(--color-primario-1000);
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*                               Estilos de la barra de navegación                                 */
+
+/* Estilos del boton menu individual */
+.boton-cerrar-abrir-menu {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    left: 20px;
+    top: 20px;
+    z-index: 50;
+}
+
+.boton-cerrar-abrir-menu__circulo-indicador {
+    width: 45px;
+    height: 45px;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease;
+}
+
+.boton-cerrar-abrir-menu__icono {
+    width: 35px;
+    height: 35px;
+    filter: invert(100%) sepia(0%) saturate(7480%) hue-rotate(355deg) brightness(106%) contrast(97%);
+}
+
+.boton-cerrar-abrir-menu:hover {
+    .boton-cerrar-abrir-menu__circulo-indicador {
+        background-color: var(--color-primario-700);
+    }
+}
+
+
+
+/* Estilos de la barra lateral */
+.barra-lateral-minimizada  {
+    position: fixed;
+    top: 10px;
+    left: 5px;
+    width: 100px;
+    height: 98%;
+    overflow: hidden;
+    padding: 20px 15px;
+    background-color: var(--color-primario-900);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: left 0.5s ease-in-out, width 0.5s ease;
+    justify-content: space-evenly;
+    z-index: 100;
+}
+
+.barra-lateral {
+    width: 280px;
+    box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.50) inset;
+}
+
+
+
+/* Estilos para el boton cerrar abrir */
+.barra-lateral__boton-cerrar-abrir {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    cursor: pointer;
+}
+
+.barra-lateral__icono--menu-abierto {
+    transform: rotate(-180deg);
+    transition: transform 0.5s ease;
+}
+
+.barra-lateral__icono--menu-cerrado {
+    transform: rotate(0deg);
+    transition: transform 0.5s ease;
+}
+
+.barra-lateral__boton-cerrar-abrir:hover {
+    .barra-lateral__circulo-indicador {
+        background-color: var(--color-primario-700);
+    }
+}
+
+
+
+/* Estilos para los enlaces */
+.barra-lateral__enlace {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+
+
+/* Estilos del circulo inidicador */
+.barra-lateral__circulo-indicador {
+    width: 45px;
+    height: 45px;
+    padding: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease;
+}
+
+
+.barra-lateral__circulo-indicador--activo {
+    background-color: var(--color-primario-700);
+}
+
+
+/* Estilos de los iconos */
+.barra-lateral__icono {
+    width: 35px;
+    height: 35px;
+    filter: invert(62%) sepia(0%) saturate(5222%) hue-rotate(53deg) brightness(85%) contrast(87%);
+}
+
+
+
+/* Estilos de los elementos */
+.barra-lateral__elemento-navegacion {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.barra-lateral__elemento-navegacion:hover {
+    .barra-lateral__circulo-indicador {
+        background-color: var(--color-primario-700);
+    }
+}
+
+
+/* Estilos de la navegación central */
+.barra-lateral__navegacion--central {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    height: 100%;
+    min-height: 100px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.barra-lateral__navegacion--central::-webkit-scrollbar {
+    width: 2px;
+}
+
+.barra-lateral__navegacion--central::-webkit-scrollbar-thumb {
+    background-color: var(--color-tenue);
+}
+
+.barra-lateral__navegacion--central::-webkit-scrollbar-thumb:hover {
+    background-color: black;
+}
+
+
+
+/* Estilos de los textos */
+.barra-lateral__texto--oculto {
+    padding-left: 15px;
+    white-space: nowrap;
+    opacity: 0;
+    width: 0;
+    text-align: left;
+    color: var(--color-tenue);
+    font-size: 20px;
+    transition: opacity 0.5s ease, with 0.5s ease;
+}
+
+.barra-lateral__texto {
+    opacity: 1;
+    width: 100%;
+}
+
+.barra-lateral__texto--wrap {
+    white-space: wrap;
+}
+
+
+
+/*                               Estilos del header de la aplicación                                 */
+.header-aplicacion {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: var(--color-primario-1000);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 50;
+    top: 0;
+}
+
+.header-aplicacion__abrir-menu {
+    width: 100px;
+    height: 10px;
+}
+
+.header-aplicacion__titulo-icono {
+    display: flex;
+    align-items: center;
+    animation-name: slideTitulo;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+}
+
+.header-aplicacion__titulo {
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    margin-left: 3px;
+}
+
+@keyframes slideTitulo {
+    from {
+        margin-bottom: 150px;
+    } to {
+        margin-bottom: 0px;
+    }
+}
+
+
+/*                               Estilos de los botones de la aplicación                                 */
+.boton-transparente {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.enlace-boton {
+    text-decoration: none;
+}
+
+.boton-transparente:hover { 
+    background-color: var(--color-boton-neutral-hover)
+}
+
+.boton-transparente:active {
+    background-color:  var(--color-boton-neutral-activo)
+}
+
+.boton-transparente--rechazar:hover { 
+    background-color: var(--color-boton-rechazar-hover)
+}
+
+.boton-transparente--rechazar:active {
+    background-color:  var(--color-boton-rechazar-activo)
+}
+
+.boton-transparente--aceptar:hover { 
+    background-color: var(--color-boton-aceptar-hover)
+}
+
+.boton-transparente--aceptar:active {
+    background-color:  var(--color-boton-aceptar-activo)
+}
+
+.boton-transparente--neutro:hover { 
+    background-color: var(--Color-Primario-500)
+}
+
+.boton-transparente--neutro:active {
+    background-color:  var(--color-primario-700)
+}
+
+.boton-transparente__icono {
+    width: 35px;
+    height: 35px;
+}
+
+.boton-transparente--salir-icono {
+    padding: 5px 5px;
+    display: none;
+}
+
+.boton--pequeño {
+    padding: 5px 10px;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.boton-normal {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: var(--Color-Primario-500);
+    color: white;
+    border-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease;
+    margin-right: 10px;
+}
+
+.boton-normal:hover {
+    background-color: var(--color-primario-700);
+} 
+
+.boton-normal:active {
+    background-color:  var(--color-primario-900)
+}
+
+
+
+/*                               Estilos para la parte central de la aplicación                                 */
+
+/* Estilos para el main */
+.acciones-aplicacion{
+    height: 100%;
+}
+
+
+.contenedor {
+    margin-top: 110px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor__porcentajes {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-right: 15px;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Estilos para el formulario */
+.formulario-aplicacion {
+    width: 400px;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: var(--color-primario-900);
+    box-shadow: 0px 0px 7px 0px rgba(255, 255, 255, 0.50) inset;
+}
+
+.formulario-aplicacion--medios-pago {
+    height: 550px;
+    align-self: flex-start;
+}
+
+.formulario-aplicacion--categorias {
+    height: 380px;
+}
+
+
+
+/* Estilos para el titulo del formulario */
+.formulario-aplicacion__titulo {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+
+/* Estilos para el label de la aplicacion */
+label {
+    color: var(--color-tenue);
+    margin: 10px 25px 2px 25px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+
+/* Estilos para los input del formulario */
+.formulario-aplicacion__input {
+    width: 350px;
+    height: 55px;
+    border-radius: 10px;
+    margin: 2px auto;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 10px;
+    background-color: var(--color-primario-700);
+    color: white;
+    font-size: 18px;
+    text-align: right;
+}
+
+.formulario-aplicacion__input::placeholder {
+    color: var(--color-tenue);
+    font-family:  "Lato", sans-serif;
+}
+
+.formulario-aplicacion__input--select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: none;
+    padding: 10px;
+    color: var(--color-tenue);
+    cursor: pointer;
+}
+
+.seleccion-mes {
+    color: var(--color-tenue);
+    font-size: 18px;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    background-color: var(--color-primario-900);
+    border: none;
+    text-align: center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: none;
+    width: 120px;
+    border-radius: 5px;
+    display: flex;
+    cursor: pointer;
+}
+
+.eligio {
+    color: white;
+}
+
+.formulario-aplicacion__input--fecha {
+    position: relative;
+    color: var(--color-tenue);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+
+.formulario-aplicacion__botones {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 40px;
+    padding-right: 15px;
+}
+
+
+/*Estilos para el contenido derecho de la aplicación (formularios e historico)*/
+.acciones-aplicacion__derecho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los porcentajes */
+.porcentajes {
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 7px 0px rgba(255, 255, 255, 0.50) inset;
+    width: 400px;
+    height: 270px;
+    border-radius: 10px;    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--color-primario-900);
+    flex-wrap: wrap
+}
+
+.porcentajes--grande {
+    height: 450px;
+}
+
+.porcentajes--desactivados {
+    background-color: transparent;
+}
+
+.porcentajes--desactivados .porcentajes__titulos {
+    color: var(--color-tenue)
+}
+
+.porcentaje {
+    display: flex;
+    width: 110px;
+    padding: 20px;
+    background-color: transparent;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.porcentaje__progreso-circular {
+    position: relative;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    background: conic-gradient(white 3.6deg, var(--color-tenue) 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.porcentaje--desactivado .porcentaje__progreso-circular {
+    background: conic-gradient(white 0deg, var(--color-tenue) 0deg);
+}
+
+.porcentaje--desactivado .porcentaje__texto {
+    color: var(--color-tenue)
+}
+
+.porcentaje--desactivado .progreso-circular__valor{
+    color: var(--color-tenue);
+}
+
+.porcentaje--desactivado .porcentaje__progreso-circular::before {
+    background-color: var(--color-primario-1000);
+}
+
+.porcentaje__progreso-circular::before {
+    content: "";
+    position: absolute;
+    height: 72px;
+    width: 72px;
+    border-radius: 50%;
+    background-color: var(--color-primario-900);
+}
+
+.progreso-circular__valor {
+    position: relative;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+}
+
+.porcentaje__texto {
+    font-size: 16px;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+}
+
+.porcentaje__texto--valor {
+    font-weight: 500;
+}
+
+.porcentajes__titulos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    color: white;
+}
+
+.porcentajes__titulo--valor {
+    font-weight: 550;
+}
+
+.span_transparente {
+    color: transparent;
+}
+
+
+
+/* Estilos para el historico */
+.historico {
+    box-shadow: 0px 0px 7px 0px rgba(255, 255, 255, 0.50) inset;
+    width: 400px;
+    height: 435px;
+    border-radius: 10px;
+    background-color: var(--color-primario-900);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.historico--programados {
+    height: 720px;
+}
+
+.historico--medios {
+    height: 550px;
+    align-self: flex-start;
+}
+
+.historico--categorias {
+    height: 335px;
+}
+
+.historico-encabezado {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    height: 50px;
+
+}
+
+.historico-encabezado--un-elemento {
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.historico-titulo {
+    font-size: 18px;
+    color: white;
+}
+
+.historico-movimientos {
+    overflow-y: scroll;
+    width: 400px;
+    height: 370px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;  
+}
+
+.historico-movimientos--medios {
+    height: 480px;
+}
+
+.historico-movimientos--programados {
+    height: 640px;
+}
+
+.historico-movimientos--categorias {
+    height: 270px;
+}
+
+.historico-movimientos::-webkit-scrollbar {
+    width: 5px;
+}
+
+.historico-movimientos::-webkit-scrollbar-thumb {
+    background-color: var(--color-tenue);
+    border-radius: 5px;
+}
+
+.historico-movimientos::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-primario-1000);
+}
+
+.historico-individual {
+    width: 360px;
+    height: 200px;
+    border: 1px solid white;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.historico-individual__texto {
+    width: 340px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 10px;
+    background-color: var(--color-primario-700);
+    color: white;
+    font-size: 16px;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.botones {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 12px;
+}
+
+
+
+
+
+
+
+/* Estilos para la responsividad */
+@media (height <= 600px) {
+    .barra-lateral__navegacion--central {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 655px) {
+
+    .formulario-aplicacion {
+        margin-right: 0px;
+    }
+
+
+
+    .acciones-aplicacion__derecho {
+        margin-top: 15px;
+    }
+
+    .contenedor__porcentajes {
+        margin-right: 0px;
+        width: 100%;
+    }
+
+    .historico{
+        width: 100%;
+    }
+
+}
+
+@media (width <= 1100px) {
+    .boton-cerrar-abrir-menu {
+        display: flex;
+    }
+
+    .barra-lateral-minimizada {
+        left: -500px;
+    }
+
+    .barra-lateral-minimizada--abierta {
+        left: 5px;
+    }
+
+    .boton-transparente--salir {
+        display: none;
+    }
+
+    .header-aplicacion__abrir-menu {
+        width: 60px;
+        height: 60px;
+    }
+
+    .boton-transparente--salir-icono {
+        display: flex;
+    }
+
+    .boton-normal {
+        padding: 7px 15px;
+        border-radius: 10px;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+
+
+
+    /* Estilos para el formulario */
+    .formulario-aplicacion {
+        width: 320px;
+        height: 650px;
+    }
+
+    .formulario-aplicacion--medios-pago {
+        height: 500px;
+        align-self: flex-start;
+    }
+
+    .formulario-aplicacion--categorias {
+        height: 330px;
+    }
+
+
+    /* Estilos para el label de la aplicacion */
+    label {
+        font-size: 15px;
+    }
+
+
+    /* Estilos para los input del formulario */
+    .formulario-aplicacion__input {
+        width: 270px;
+        height: 45px;
+        border-radius: 7px;
+        font-size: 15px;
+    }
+
+    .formulario-aplicacion__input::placeholder {
+        font-size: 15px;
+    }
+
+
+    .formulario-aplicacion__botones {
+        width: 100%;
+        margin-top: 40px;
+        padding-right: 15px;
+    }
+
+
+    /* Estilos para los porcentajes */
+    .porcentajes {
+        margin-bottom: 15px;
+        width: 320px;
+        height: 235px;
+    }
+
+    .porcentaje {
+        width: 90px;
+    }
+
+    .porcentaje__progreso-circular {
+        width: 85px;
+        height: 85px;
+    }
+
+    .porcentaje__progreso-circular::before {
+        height: 65px;
+        width: 65px;
+    }
+
+    .progreso-circular__valor {
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .porcentaje__texto {
+        font-size: 15px;
+        font-weight: 300;
+    }
+
+    .porcentaje__texto--valor {
+        font-weight: 500;
+    }
+
+    .porcentajes__titulos {
+        font-size: 15px;
+    }
+
+    .porcentajes--grande {
+        height: 400px;
+    }
+
+
+    /* Estilos para el historico */
+    .historico {
+        width: 320px;
+        height: 400px;
+    }
+
+    .historico--programados {
+        height: 650px;
+    }
+
+    .historico--medios {
+        height: 500px;
+    }
+
+    .historico--categorias {
+        height: 300px;
+    }
+
+    .historico-titulo {
+        font-size: 15px;
+    }
+
+    .historico-movimientos {
+        width: 320px;
+        height: 335px;
+    }
+
+    .historico-movimientos--programados {
+        width: 320px;
+        height: 570px;
+    }
+
+    .historico-movimientos--medios {
+        height: 440px;
+    }
+
+    .historico-movimientos--categorias {
+        height: 240px;
+    }
+
+    .historico-individual {
+        width: 290px;
+        height: 180px;
+        border-radius: 10px;
+    }
+
+    .historico-individual__texto {
+        width: 270px;
+        height: 45px;
+        border-radius: 7px;
+        padding-right: 10px;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .botones {
+        width: 100%;
+        height: 50px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 10px;
+    }
+
+
+    .seleccion-mes {
+        font-size: 15px;
+        width: 100px;
+    }
+
+}

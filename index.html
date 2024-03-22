@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Focus</title>
+    <link rel="stylesheet" href="./Aplicacion-publica/css/navbar.css">
+    <link rel="stylesheet" href="./Aplicacion-publica/css/footer.css">
+    <link rel="stylesheet" href="./Aplicacion-publica/css/estilos.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="./Aplicacion-publica/imagenes/principales/logo-finance-focus.png" alt="Logo de la marca">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="./Aplicacion-publica/html/nosotros.html">Nosotros</a></li>+
+                <a class="btn" id="reg" href="./Aplicacion-publica/html/login.html"><button>Registrate</button></a>
+                <a class="btn" id="log" href="./Aplicacion-publica/html/login.html"><button>Inicia Sesión</button></a>
+            </ul>
+        </nav>
+
+        <a onclick="openNav()" class="menu" href="#"><button>Menu</button></a>
+
+        <div id="mobile-menu" class="overlay">
+            <a onclick="closeNav()" href="" class="close">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html">Inicio</a>
+                <a href="./Aplicacion-publica/html/nosotros.html">Nosotros</a>
+                <a href="./Aplicacion-publica/html/login.html">Registraste</a>
+                <a href="./Aplicacion-publica/html/login.html">Inicia Sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="body1">
+            <div class="content1">
+                <h1 class="title">
+                    Gestiona todas tus
+                    <span class="subtitle">
+                        finanzas en un solo lugar
+                    </span>
+                </h1>
+                <p class="descp">
+                    Queremos facilitarte la vida poniendo a tu disposición la
+                    herramienta más amigable para el control de finanzas personales.
+                </p>
+            </div>
+            <div class="content2">
+                <div class="img">
+                    <img 
+                        class="img_inicio" 
+                        src="./Aplicacion-publica/imagenes/principales/dispositivos.png"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section>
+            <div class="body2">
+                <h1 class="title2">
+                    Haz tus gastos de manera conciente
+                    y toma el control de tus finanzas
+                </h1>
+                <div class="cards">
+                    <div class="card">
+                        <img class="card-img" src="./Aplicacion-publica/imagenes/cards/01-imagen-card-balanza.png"
+                            width="50px" alt="">
+                        <h1 class="title-card">Crea presupuestos</h1>
+                        <p>Planea tu mes y no dejes que los gastos te cojan desprevenido</p>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="./Aplicacion-publica/imagenes/cards/02-imagen-card-ahorros.png"
+                            width="50px" alt="">
+                        <h1 class="title-card">Metas de ahorro</h1>
+                        <p>Cumple tus metas
+                            financieras, ahorra
+                            y lleva un control de ello
+                        </p>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="./Aplicacion-publica/imagenes/cards/03-imagen-card-asesoria.png"
+                            width="50px" alt="">
+                        <h1 class="title-card">Asesórate</h1>
+                        <p>Tendremos para ti
+                            recursos y asesoramiento
+                            para que lo hagas todo
+                            de la mejor manera
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+
+        <ul class="social-icon">
+            <li class="social-icon__item">
+                <a class="social-icon__link" href="#">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+            </li>
+            <li class="social-icon__item">
+                <a class="social-icon__link" href="#">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+            </li>
+            <li class="social-icon__item">
+                <a class="social-icon__link" href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+            </li>
+            <li class="social-icon__item">
+                <a class="social-icon__link" href="#">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="menu-footer">
+            <li class="menu__item"><a class="menu__link" href="index.html">Inicio</a></li>
+            <li class="menu__item"><a class="menu__link" href="./Aplicacion-publica/html/nosotros.html">Nosotros</a>
+            </li>
+            <li class="menu__item"><a class="menu__link" href="./Aplicacion-publica/html/login.html">Registrate</a></li>
+            <li class="menu__item"><a class="menu__link" href="./Aplicacion-publica/html/login.html">Inicia sesión</a>
+            </li>
+        </ul>
+        <p>&copy;2024 Patrocinados por: Globant - CESDE</p>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="./Aplicacion-publica/javascript/navbar.js"></script>
+</body>
+
+</html>
